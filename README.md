@@ -1,0 +1,2 @@
+# CppPatterns
+Common C++ patterns
