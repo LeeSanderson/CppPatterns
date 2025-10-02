@@ -9,13 +9,30 @@ if (POLICY CMP0141)
   set(CMAKE_MSVC_DEBUG_INFORMATION_FORMAT "$<IF:$<AND:$<C_COMPILER_ID:MSVC>,$<CXX_COMPILER_ID:MSVC>>,$<$<CONFIG:Debug,RelWithDebInfo>:EditAndContinue>,$<$<CONFIG:Debug,RelWithDebInfo>:ProgramDatabase>>")
 endif()
 
-project ("CppPatterns")
+project (CppPatterns)
 
 # Add source to this project's executable.
-add_executable (CppPatterns "CppPatterns.cpp" "CppPatterns.h")
+# add_library(CppPatternsLib "src/CppPatterns.cpp")
+# target_include_directories(CppPatternsLib PUBLIC ${CMAKE_CURRENT_SOURCE_DIR}/src)
 
-if (CMAKE_VERSION VERSION_GREATER 3.12)
-  set_property(TARGET CppPatterns PROPERTY CXX_STANDARD 20)
-endif()
+# add_executable(CppPatternsApp "src/CppPatterns.cpp")
+# target_link_libraries(CppPatternsApp PRIVATE CppPatternsLib)
 
-# TODO: Add tests and install targets if needed.
+# Add tests
+include(FetchContent)
+
+FetchContent_Declare(
+  googletest
+  URL https://github.com/google/googletest/archive/refs/tags/v1.15.2.zip
+)
+# For MSVC runtime settings
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+
+enable_testing()
+
+add_executable(CppPatternsTest "test/CppPatternsTest.cpp")
+target_link_libraries(CppPatternsTest PRIVATE GTest::gtest_main)
+
+include(GoogleTest)
+gtest_discover_tests(CppPatternsTest)
