@@ -1,0 +1,26 @@
+#include "gtest/gtest.h"
+#include "../../src/callbacks/MultiTimedEvent.h"
+
+TEST(MultiTimedEvent, TriggerEvent1)
+{
+	auto multiTimedEvent = new callbacks::MultiTimedEvent();
+	EXPECT_FALSE(multiTimedEvent->event1TimedOut);
+	EXPECT_FALSE(multiTimedEvent->event2TimedOut);
+
+	multiTimedEvent->eventTimer1.triggerTimeout();
+
+	EXPECT_TRUE(multiTimedEvent->event1TimedOut);
+	EXPECT_FALSE(multiTimedEvent->event2TimedOut);
+}
+
+TEST(MultiTimedEvent, TriggerEvent2)
+{
+	auto multiTimedEvent = new callbacks::MultiTimedEvent();
+	EXPECT_FALSE(multiTimedEvent->event1TimedOut);
+	EXPECT_FALSE(multiTimedEvent->event2TimedOut);
+
+	multiTimedEvent->eventTimer2.triggerTimeout();
+
+	EXPECT_TRUE(multiTimedEvent->event2TimedOut);
+	EXPECT_FALSE(multiTimedEvent->event1TimedOut);
+}

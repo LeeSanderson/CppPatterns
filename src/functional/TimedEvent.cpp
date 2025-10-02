@@ -3,5 +3,6 @@
 
 namespace functional
 {
+	// Functional approach makes control flow explicit
 	TimedEvent::TimedEvent() : eventTimer([this] { eventTimedOut = true; }) {}
 }
