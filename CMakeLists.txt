@@ -31,7 +31,20 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_executable(CppPatternsTest   "src/utils/Timer.h" "test/utils/TimerTests.cpp")
+add_executable(CppPatternsTest
+	"src/utils/Timer.h" 
+	"src/utils/Timer.cpp" 
+	"test/utils/TimerTests.cpp" 
+	
+	"src/callbacks/TimedEvent.h" 
+	"src/callbacks/TimedEvent.cpp" 
+	"test/callbacks/TimedEventTests.cpp" 
+	
+	"src/functional/TimedEvent.h" 
+	"src/functional/TimedEvent.cpp"
+	"test/functional/FnTimedEventTests.cpp" 
+)
+
 target_link_libraries(CppPatternsTest PRIVATE GTest::gtest_main)
 
 include(GoogleTest)

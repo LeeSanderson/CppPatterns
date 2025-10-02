@@ -3,5 +3,8 @@
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;GTest::DB94C55F-6B9A-4AAE-80D7-29FD8153E6B5::::SmokeTest.BasicAssertions&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;GTest::DB94C55F-6B9A-4AAE-80D7-29FD8153E6B5::::TimerTests.TriggerCallback&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;GTest::DB94C55F-6B9A-4AAE-80D7-29FD8153E6B5::::TimerTests.TriggerFunctionCallback&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;GTest::DB94C55F-6B9A-4AAE-80D7-29FD8153E6B5::::TimedEventTests.TriggerCallback&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;GTest::DB94C55F-6B9A-4AAE-80D7-29FD8153E6B5::::FunctionalTimedEventTests.TriggerCallback&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
