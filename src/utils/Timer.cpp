@@ -1,11 +1,14 @@
 #include "Timer.h"
 #include <functional>
 
-utils::Timer::Timer(const std::function<void()>& onTimeout) : cb(new utils::FunctionTimerCallback(onTimeout)) {}
-
-void utils::Timer::triggerTimeout()
+namespace utils
 {
-	if (cb) {
-		cb->handleTimeout(this);
+	Timer::Timer(const std::function<void()>& onTimeout) : cb(new FunctionTimerCallback(onTimeout)) {}
+
+	void Timer::triggerTimeout()
+	{
+		if (cb) {
+			cb->handleTimeout(this);
+		}
 	}
 }

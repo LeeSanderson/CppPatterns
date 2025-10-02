@@ -5,7 +5,7 @@
 
 TEST(FunctionalTimedEventTests, TriggerCallback)
 {
-	auto timedEvent = new func::TimedEvent();
+	auto timedEvent = new functional::TimedEvent();
 	EXPECT_FALSE(timedEvent->eventTimedOut);
 	timedEvent->eventTimer.triggerTimeout();
 	EXPECT_TRUE(timedEvent->eventTimedOut);
