@@ -10,6 +10,6 @@ namespace templated
 		utils::TemplatedTimer<TimedEvent> eventTimer;
 		bool eventTimedOut = false;
 	private:
-		void setTimedOut();
+		void onEventTimerTimeout();
 	};
 }

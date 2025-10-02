@@ -2,9 +2,9 @@
 
 using namespace templated;
 
-TimedEvent::TimedEvent() : eventTimer(this, &TimedEvent::setTimedOut) {}
+TimedEvent::TimedEvent() : eventTimer(this, &TimedEvent::onEventTimerTimeout) {}
 
-void TimedEvent::setTimedOut()
+void TimedEvent::onEventTimerTimeout()
 {
 	eventTimedOut = true;
 }
