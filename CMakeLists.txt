@@ -31,7 +31,7 @@ FetchContent_MakeAvailable(googletest)
 
 enable_testing()
 
-add_executable(CppPatternsTest "test/CppPatternsTest.cpp")
+add_executable(CppPatternsTest   "src/utils/Timer.h" "test/utils/TimerTests.cpp")
 target_link_libraries(CppPatternsTest PRIVATE GTest::gtest_main)
 
 include(GoogleTest)
