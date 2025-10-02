@@ -43,7 +43,7 @@ add_executable(CppPatternsTest
 	"src/functional/TimedEvent.h" 
 	"src/functional/TimedEvent.cpp"
 	"test/functional/TimedEventTests.cpp" 
- "src/callbacks/MultiTimedEvent.h" "src/callbacks/MultiTimedEvent.cpp" "test/callbacks/MultiTimedEventTests.cpp" "src/functional/MultiTimedEvent.h" "src/functional/MultiTimedEvent.cpp" "test/functional/MultiTimedEventTests.cpp" "src/templated/TimedEvent.h" "src/templated/TimedEvent.cpp" "test/templated/TimedEventTests.cpp")
+ "src/callbacks/MultiTimedEvent.h" "src/callbacks/MultiTimedEvent.cpp" "test/callbacks/MultiTimedEventTests.cpp" "src/functional/MultiTimedEvent.h" "src/functional/MultiTimedEvent.cpp" "test/functional/MultiTimedEventTests.cpp" "src/templated/TimedEvent.h" "src/templated/TimedEvent.cpp" "test/templated/TimedEventTests.cpp" "src/templated/MultiTimedEvent.h" "src/templated/MultiTimeEvent.cpp" "test/templated/MultiTimedEventTests.cpp")
 
 target_link_libraries(CppPatternsTest PRIVATE GTest::gtest_main)
 

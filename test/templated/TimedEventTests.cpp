@@ -3,7 +3,7 @@
 
 using namespace templated;
 
-TEST(FunctionalTimedEventTests, TriggerCallback)
+TEST(TemplatedTimedEventTests, TriggerCallback)
 {
 	auto timedEvent = new TimedEvent();
 	EXPECT_FALSE(timedEvent->eventTimedOut);

@@ -12,9 +12,3 @@ void Timer::start()
 		cb->handleTimeout(this);
 	}
 }
-
-template <typename T>
-void TemplatedTimer<T>::start()
-{
-	instance_->*method_();
-}

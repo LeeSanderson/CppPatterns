@@ -38,7 +38,7 @@ namespace utils {
 	public:
 		using Method = void (T::*)();
 		TemplatedTimer(T* instance, Method method) : instance_(instance), method_(method) {}
-		void start();
+		void start() { (instance_->*method_)(); }
 	private:
 		T* instance_;
 		Method method_;
