@@ -1,7 +1,7 @@
 #include "gtest/gtest.h"
-#include "../../src/functional/TimedEvent.h"
+#include "../../src/templated/TimedEvent.h"
 
-using namespace functional;
+using namespace templated;
 
 TEST(FunctionalTimedEventTests, TriggerCallback)
 {

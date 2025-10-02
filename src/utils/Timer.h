@@ -12,7 +12,7 @@ namespace utils {
 		Timer(TimerCallback* onTimeout) : cb(onTimeout) {}
 		Timer(const std::function<void()>& onTimeout);
 
-		void triggerTimeout();
+		void start();
 	private:
 		TimerCallback* cb;
 	};
@@ -20,15 +20,27 @@ namespace utils {
 	class FunctionTimerCallback : public Timer::TimerCallback
 	{
 	public:
-		FunctionTimerCallback(const std::function<void()>& cb) : callback(cb) {}
+		FunctionTimerCallback(const std::function<void()>& cb) : callback_(cb) {}
 		void handleTimeout(Timer* t) override
 		{
-			if (callback) {
-				callback();
+			if (callback_) {
+				callback_();
 			}
 		}
 
 	private:
-		std::function<void()> callback;
+		std::function<void()> callback_;
+	};
+
+	template <typename T>
+	class TemplatedTimer
+	{
+	public:
+		using Method = void (T::*)();
+		TemplatedTimer(T* instance, Method method) : instance_(instance), method_(method) {}
+		void start();
+	private:
+		T* instance_;
+		Method method_;
 	};
 }

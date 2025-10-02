@@ -12,5 +12,6 @@ namespace functional
 		utils::Timer eventTimer2;
 		bool eventTimedOut1 = false;
 		bool eventTimedOut2 = false;
+		void setEventTimeout1() { eventTimedOut1 = true; }
 	};
 }

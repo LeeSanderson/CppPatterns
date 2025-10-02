@@ -7,6 +7,6 @@ TEST(TimedEventTests, TriggerCallback)
 {
 	auto timedEvent = new TimedEvent();
 	EXPECT_FALSE(timedEvent->eventTimedOut);
-	timedEvent->eventTimer.triggerTimeout();
+	timedEvent->eventTimer.start();
 	EXPECT_TRUE(timedEvent->eventTimedOut);
 }

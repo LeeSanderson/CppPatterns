@@ -8,7 +8,7 @@ TEST(TimerTests, TriggerCallback)
 	int callbackCount = 0;
 	auto callback = [&callbackCount] { callbackCount++; };
 	utils::Timer t(new utils::FunctionTimerCallback(callback));
-	t.triggerTimeout();
+	t.start();
 	EXPECT_EQ(callbackCount, 1);
 }
 
@@ -17,6 +17,6 @@ TEST(TimerTests, TriggerFunctionCallback)
 	int callbackCount = 0;
 	auto callback = [&callbackCount] { callbackCount++; };
 	utils::Timer t(callback);
-	t.triggerTimeout();
+	t.start();
 	EXPECT_EQ(callbackCount, 1);
 }

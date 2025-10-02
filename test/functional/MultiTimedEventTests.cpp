@@ -9,7 +9,7 @@ TEST(FunctionalMultiTimedEventTests, TriggerEvent1)
 	EXPECT_FALSE(multiTimedEvent->eventTimedOut1);
 	EXPECT_FALSE(multiTimedEvent->eventTimedOut2);
 
-	multiTimedEvent->eventTimer1.triggerTimeout();
+	multiTimedEvent->eventTimer1.start();
 
 	EXPECT_TRUE(multiTimedEvent->eventTimedOut1);
 	EXPECT_FALSE(multiTimedEvent->eventTimedOut2);
@@ -21,7 +21,7 @@ TEST(FunctionalMultiTimedEventTests, TriggerEvent2)
 	EXPECT_FALSE(multiTimedEvent->eventTimedOut1);
 	EXPECT_FALSE(multiTimedEvent->eventTimedOut2);
 
-	multiTimedEvent->eventTimer2.triggerTimeout();
+	multiTimedEvent->eventTimer2.start();
 
 	EXPECT_TRUE(multiTimedEvent->eventTimedOut2);
 	EXPECT_FALSE(multiTimedEvent->eventTimedOut1);
