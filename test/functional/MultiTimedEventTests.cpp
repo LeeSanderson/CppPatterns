@@ -1,9 +1,11 @@
 #include "gtest/gtest.h"
 #include "../../src/functional/MultiTimedEvent.h"
 
+using namespace functional;
+
 TEST(FunctionalMultiTimedEventTests, TriggerEvent1)
 {
-	auto multiTimedEvent = new functional::MultiTimedEvent();
+	auto multiTimedEvent = new MultiTimedEvent();
 	EXPECT_FALSE(multiTimedEvent->eventTimedOut1);
 	EXPECT_FALSE(multiTimedEvent->eventTimedOut2);
 
@@ -15,7 +17,7 @@ TEST(FunctionalMultiTimedEventTests, TriggerEvent1)
 
 TEST(FunctionalMultiTimedEventTests, TriggerEvent2)
 {
-	auto multiTimedEvent = new functional::MultiTimedEvent();
+	auto multiTimedEvent = new MultiTimedEvent();
 	EXPECT_FALSE(multiTimedEvent->eventTimedOut1);
 	EXPECT_FALSE(multiTimedEvent->eventTimedOut2);
 
